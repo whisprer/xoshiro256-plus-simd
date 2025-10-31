@@ -1,6 +1,29 @@
+[README.md]
+
+# Xoshiro256-Plus-Simd
+
+<p align="center">
+  <a href="https://github.com/whisprer/xoshiro256-plus-simd/releases"> 
+    <img src="https://img.shields.io/github/v/release/whisprer/xoshiro256-plus-simd?color=4CAF50&label=release" alt="Release Version"> 
+  </a>
+  <a href="https://github.com/whisprer/xoshiro256-plus-simd/actions"> 
+    <img src="https://img.shields.io/github/actions/workflow/status/whisprer/xoshiro256-plus-simd/lint-and-plot.yml?label=build" alt="Build Status"> 
+  </a>
+</p>
+
+![Commits](https://img.shields.io/github/commit-activity/m/whisprer/xoshiro256-plus-simd?label=commits) 
+![Last Commit](https://img.shields.io/github/last-commit/whisprer/xoshiro256-plus-simd) 
+![Issues](https://img.shields.io/github/issues/whisprer/xoshiro256-plus-simd) 
+[![Version](https://img.shields.io/badge/version-3.1.1-blue.svg)](https://github.com/whisprer/xoshiro256-plus-simd) 
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey.svg)](https://www.microsoft.com/windows)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+<p align="center">
+  <img src="xoshiro256-plus-simd-banner.png" width="850" alt="Xoshiro256-Plus-Simd Banner">
+
 # Xoshiro256PlusSIMD
 Serial and SIMD implementation of the Xoshiro256+ random number generator.
-
 
 This project provides a C++ implementation of Xoshiro256+ that matches the performance of the reference C
 implementation of David Blackman and Sebastiano Vigna.  Xoshiro256+ combines high speed, small memory
@@ -118,16 +141,18 @@ Times are for generating 1,000,000 values.  For the reference benchmark and the 
 a little more than 1ms was required to generate the 1M values, therefore the RNG is able to generarte a new value in about 1ns
 on the target system.  By comparison, the AVX2 implementation was able to generate 250k four wide values in 526 microseconds, which is about half a nanosecond per value.
 
-    -------------------------------------------------------------------------------
+-
     Benchmarks
-    -------------------------------------------------------------------------------
+
+-
     /home/steve/dev/xoroshiro/Xoshiro256PlusSIMD/UnitTest/Benchmark.cpp:15
     ...............................................................................
 
     benchmark name                       samples       iterations    estimated
                                         mean          low mean      high mean
                                         std dev       low std dev   high std dev
-    -------------------------------------------------------------------------------
+
+-
     Reference                                      100             1    108.357 ms 
                                             1.09005 ms     1.0857 ms     1.1014 ms 
                                             32.5232 us    7.15382 us    63.1828 us 
@@ -240,16 +265,18 @@ implementation.  It is possible that could be addressed with a bit more careful 
 anything that requires high performance numerical processing and you need a high-speed stream of random values - 
 you ought to be running on a processer with AVX2, pretty much any decent processor made in the last 5 years supports it.
 
-    -------------------------------------------------------------------------------
+-
     Benchmarks No AVX
-    -------------------------------------------------------------------------------
+
+-
     /home/steve/dev/xoroshiro/Xoshiro256PlusSIMD/UnitTestNoAVX/BenchmarkNoAVX.cpp:14
     ...............................................................................
 
     benchmark name                       samples       iterations    estimated
                                         mean          low mean      high mean
                                         std dev       low std dev   high std dev
-    -------------------------------------------------------------------------------
+
+-
     Reference                                      100             1    108.411 ms 
                                             1.08495 ms    1.08335 ms    1.08858 ms 
                                             11.5081 us    6.45596 us    23.0117 us 
